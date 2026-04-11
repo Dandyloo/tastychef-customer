@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#E8572A">
+  <title>Tasty Chef - Confirmation</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components/bottom-nav.css">
+  <link rel="stylesheet" href="css/pages/confirmation.css">
+</head>
+<body data-page="confirmation">
+
+  <main class="page-content" id="main-content">
+    <!-- Confirmation page content goes here -->
+  </main>
+
+  <!-- Bottom Navigation -->
+  <div id="bottom-nav"></div>
+
+  <!-- JS -->
+  <script src="js/utils.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/pages/confirmation.js"></script>
+  <script>
+    fetch('components/bottom-nav.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('bottom-nav').innerHTML = html;
+        highlightActiveTab();
+      });
+  </script>
+
+</body>
+</html>
