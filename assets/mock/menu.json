@@ -1,0 +1,105 @@
+{
+  "categories": ["All", "Rice", "Noodles", "Local", "Grills"],
+  "items": [
+    {
+      "id": 1,
+      "name": "Jollof Rice + Grilled Chicken",
+      "category": "Rice",
+      "price": 35.00,
+      "description": "Smoky party jollof with perfectly grilled chicken and fresh salad.",
+      "image": "assets/images/jollof.jpg",
+      "popular": true,
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "Noodles",
+      "category": "Noodles",
+      "price": 30.00,
+      "description": "Their signature dish. Perfectly spiced noodles — the one everyone orders.",
+      "image": "assets/images/noodles.jpg",
+      "popular": true,
+      "available": true
+    },
+    {
+      "id": 3,
+      "name": "Noodles + Chicken",
+      "category": "Noodles",
+      "price": 40.00,
+      "description": "Signature noodles loaded with juicy grilled chicken.",
+      "image": "assets/images/noodles-chicken.jpg",
+      "popular": false,
+      "available": true
+    },
+    {
+      "id": 4,
+      "name": "Fried Rice + Chicken",
+      "category": "Rice",
+      "price": 35.00,
+      "description": "Classic fried rice with seasoned chicken. A crowd favourite.",
+      "image": "assets/images/fried-rice.jpg",
+      "popular": false,
+      "available": true
+    },
+    {
+      "id": 5,
+      "name": "Banku + Grilled Tilapia",
+      "category": "Local",
+      "price": 40.00,
+      "description": "Fresh banku paired with perfectly grilled tilapia and pepper sauce.",
+      "image": "assets/images/banku-tilapia.jpg",
+      "popular": true,
+      "available": true
+    },
+    {
+      "id": 6,
+      "name": "Fufu + Light Soup",
+      "category": "Local",
+      "price": 30.00,
+      "description": "Hand-pounded fufu in a rich, flavourful light soup.",
+      "image": "assets/images/fufu.jpg",
+      "popular": false,
+      "available": true
+    },
+    {
+      "id": 7,
+      "name": "Grilled Chicken + Salad",
+      "category": "Grills",
+      "price": 45.00,
+      "description": "Tender grilled chicken served with fresh garden salad.",
+      "image": "assets/images/grilled-chicken.jpg",
+      "popular": false,
+      "available": true
+    },
+    {
+      "id": 8,
+      "name": "Banku + Okro Stew",
+      "category": "Local",
+      "price": 25.00,
+      "description": "Smooth banku with rich okro stew. Ghanaian comfort food.",
+      "image": "assets/images/banku-okro.jpg",
+      "popular": false,
+      "available": true
+    },
+    {
+      "id": 9,
+      "name": "Fried Rice + Fish",
+      "category": "Rice",
+      "price": 30.00,
+      "description": "Flavourful fried rice served with seasoned fish.",
+      "image": "assets/images/fried-rice-fish.jpg",
+      "popular": false,
+      "available": true
+    },
+    {
+      "id": 10,
+      "name": "Noodles + Egg",
+      "category": "Noodles",
+      "price": 35.00,
+      "description": "Signature noodles topped with a perfectly cooked egg.",
+      "image": "assets/images/noodles-egg.jpg",
+      "popular": false,
+      "available": true
+    }
+  ]
+}
