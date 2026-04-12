@@ -16,13 +16,107 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/components/bottom-nav.css">
+  <link rel="stylesheet" href="css/components/header.css">
   <link rel="stylesheet" href="css/pages/checkout.css">
 </head>
 <body data-page="checkout">
 
- <main class="page-content" id="main-content">
-    <h1 style="padding:20px;">Checkout 🛒</h1>
-  </main>
+<header class="app-header">
+  <button class="app-header__btn" onclick="history.back()">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M12 5l-7 7 7 7"/>
+    </svg>
+  </button>
+  <div class="app-header__brand">
+    <span class="app-header__name">Checkout</span>
+    <span class="app-header__tagline">Almost there!</span>
+  </div>
+</header>
+
+<main class="page-content" id="main-content">
+
+  <!-- Order Summary (collapsed) -->
+  <div class="checkout-summary card" id="checkout-summary">
+    <div class="checkout-summary__top" onclick="toggleSummary()">
+      <div>
+        <p class="checkout-summary__label">Order Summary</p>
+        <p class="checkout-summary__total" id="checkout-total">GH₵ 0.00</p>
+      </div>
+      <span class="checkout-summary__toggle" id="summary-toggle">▼</span>
+    </div>
+    <div class="checkout-summary__items hidden" id="summary-items">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+
+  <!-- Guest Checkout Form -->
+  <div class="checkout-form-section">
+    <h2 class="checkout-section-title">Delivery Details</h2>
+
+    <div class="input-group">
+      <label class="input-label" for="input-name">Full Name *</label>
+      <input
+        class="input-field"
+        type="text"
+        id="input-name"
+        placeholder="e.g. Kwame Mensah"
+        oninput="clearError('input-name')"
+      >
+      <span class="input-error-msg hidden" id="error-name">Please enter your full name</span>
+    </div>
+
+    <div class="input-group">
+      <label class="input-label" for="input-phone">Phone Number *</label>
+      <input
+        class="input-field"
+        type="tel"
+        id="input-phone"
+        placeholder="e.g. 0244123456"
+        maxlength="10"
+        oninput="clearError('input-phone')"
+      >
+      <span class="input-error-msg hidden" id="error-phone">Please enter a valid 10-digit number</span>
+    </div>
+
+    <div class="input-group">
+      <label class="input-label" for="input-address">Delivery Address *</label>
+      <input
+        class="input-field"
+        type="text"
+        id="input-address"
+        placeholder="e.g. Oguaa Hall, Room 204, UCC"
+        oninput="clearError('input-address')"
+      >
+      <span class="input-error-msg hidden" id="error-address">Please enter your delivery address</span>
+    </div>
+
+    <div class="input-group">
+      <label class="input-label" for="input-notes">Order Notes (optional)</label>
+      <textarea
+        class="input-field"
+        id="input-notes"
+        placeholder="e.g. Extra pepper please, no onions..."
+        rows="3"
+        style="resize: none; height: auto;"
+      ></textarea>
+    </div>
+
+  </div>
+
+  <!-- Delivery Info -->
+  <div class="delivery-info">
+    <span>🕐</span>
+    <p>Estimated delivery: <strong>30–45 mins</strong> on weekdays</p>
+  </div>
+
+</main>
+
+<!-- Sticky Place Order Button -->
+<div class="checkout-bar">
+  <button class="btn btn-primary" id="place-order-btn" onclick="handlePlaceOrder()">
+    Place Order 🍽️
+  </button>
+</div>
 
   <nav class="bottom-nav">
     <a href="index.html" class="nav-item" data-page="home">
