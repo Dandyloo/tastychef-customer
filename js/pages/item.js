@@ -102,20 +102,18 @@ function updateTotal() {
 function handleAddToCart() {
   if (!currentItem) return;
 
-  // Cart logic coming on Day 9
-  // For now just show toast and animate button
+  addToCart(currentItem, quantity);
+
+  // Animate button to confirm
   const btn = document.getElementById('add-to-cart-btn');
   if (btn) {
-    btn.textContent = '✓ Added!';
+    btn.textContent = '✓ Added to Cart!';
     btn.style.background = 'var(--color-success)';
     setTimeout(() => {
       btn.style.background = '';
       updateTotal();
     }, 1500);
   }
-
-  showToast(`${currentItem.name} added to cart! 🛒`, 'success');
-  updateCartBadge();
 }
 
 // ── Scroll Effect on Header ────────────────

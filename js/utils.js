@@ -15,7 +15,7 @@ function formatPrice(amount) {
 function updateCartBadge() {
   const badge = document.getElementById('cart-badge');
   if (!badge) return;
-  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  const cart = JSON.parse(localStorage.getItem('tastychef_cart') || '[]');
   const total = cart.reduce((sum, item) => sum + item.quantity, 0);
   badge.textContent = total;
   if (total > 0) {
