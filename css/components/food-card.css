@@ -121,3 +121,18 @@
 .food-card--unavailable .food-card__badge {
   background: var(--color-text-light);
 }
+
+.food-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 30, 140, 0.06);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+}
+
+.food-card:active::after {
+  opacity: 1;
+}

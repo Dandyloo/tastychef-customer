@@ -1,7 +1,29 @@
 // home.js — Home page logic
 
+// ── Skeletons ──────────────────────────────
+function showHomeSkeletons() {
+  const popularGrid = document.getElementById('popular-grid');
+  const allGrid     = document.getElementById('all-grid');
+
+  const skeletonCard = `
+    <div class="food-card">
+      <div class="skeleton" style="height:140px; border-radius: var(--radius-lg) var(--radius-lg) 0 0;"></div>
+      <div class="food-card__body">
+        <div class="skeleton" style="height:14px; width:75%; margin-bottom:8px; border-radius:4px;"></div>
+        <div class="skeleton" style="height:14px; width:40%; border-radius:4px;"></div>
+      </div>
+    </div>
+  `;
+
+  if (popularGrid) popularGrid.innerHTML = Array(2).fill(skeletonCard).join('');
+  if (allGrid)     allGrid.innerHTML     = Array(4).fill(skeletonCard).join('');
+}
+
+// ── Load Data ──────────────────────────────
 async function loadHomeData() {
   try {
+    showHomeSkeletons(); // Show skeletons immediately
+
     const res  = await fetch('assets/mock/menu.json');
     const data = await res.json();
 
@@ -14,10 +36,10 @@ async function loadHomeData() {
   }
 }
 
+// ── Category Pills ─────────────────────────
 function renderCategoryPills(categories) {
   const strip = document.getElementById('category-strip');
   if (!strip) return;
-
   strip.innerHTML = categories.map((cat, index) => `
     <button
       class="category-pill ${index === 0 ? 'active' : ''}"
@@ -27,11 +49,8 @@ function renderCategoryPills(categories) {
 }
 
 function filterByCategory(category, btn) {
-  // Update active pill
   document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
   btn.classList.add('active');
-
-  // Re-render all grid with filter
   fetch('assets/mock/menu.json')
     .then(r => r.json())
     .then(data => {
@@ -42,6 +61,7 @@ function filterByCategory(category, btn) {
     });
 }
 
+// ── Render ─────────────────────────────────
 function renderPopularItems(items) {
   const grid = document.getElementById('popular-grid');
   if (!grid) return;
@@ -86,9 +106,9 @@ function createFoodCardHTML(item) {
   `;
 }
 
+// ── Quick Add ──────────────────────────────
 function quickAddToCart(event, itemId) {
   event.stopPropagation();
-
   fetch('assets/mock/menu.json')
     .then(r => r.json())
     .then(data => {
