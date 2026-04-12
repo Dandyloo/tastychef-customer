@@ -16,13 +16,99 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/components/bottom-nav.css">
+  <link rel="stylesheet" href="css/components/header.css">
   <link rel="stylesheet" href="css/pages/tracking.css">
 </head>
 <body data-page="tracking">
 
-  <main class="page-content" id="main-content">
-    <h1 style="padding:20px;">Tracking 🕒</h1>
-  </main>
+<header class="app-header">
+  <div class="app-header__brand">
+    <span class="app-header__name">Track Order</span>
+    <span class="app-header__tagline" id="tracking-order-id">Loading...</span>
+  </div>
+</header>
+
+<main class="page-content" id="main-content">
+
+  <!-- Order Status Stepper -->
+  <div class="tracker-card card">
+
+    <div class="tracker-step" id="step-received">
+      <div class="tracker-step__icon">🧾</div>
+      <div class="tracker-step__content">
+        <p class="tracker-step__title">Order Received</p>
+        <p class="tracker-step__desc">Tasty Chef has received your order</p>
+      </div>
+      <div class="tracker-step__dot"></div>
+    </div>
+
+    <div class="tracker-line" id="line-1"></div>
+
+    <div class="tracker-step" id="step-preparing">
+      <div class="tracker-step__icon">👨🏾‍🍳</div>
+      <div class="tracker-step__content">
+        <p class="tracker-step__title">Being Prepared</p>
+        <p class="tracker-step__desc">Chef is cooking your meal</p>
+      </div>
+      <div class="tracker-step__dot"></div>
+    </div>
+
+    <div class="tracker-line" id="line-2"></div>
+
+    <div class="tracker-step" id="step-ready">
+      <div class="tracker-step__icon">✅</div>
+      <div class="tracker-step__content">
+        <p class="tracker-step__title">Ready for Pickup</p>
+        <p class="tracker-step__desc">Your order is ready</p>
+      </div>
+      <div class="tracker-step__dot"></div>
+    </div>
+
+    <div class="tracker-line" id="line-3"></div>
+
+    <div class="tracker-step" id="step-delivery">
+      <div class="tracker-step__icon">🛵</div>
+      <div class="tracker-step__content">
+        <p class="tracker-step__title">Out for Delivery</p>
+        <p class="tracker-step__desc">Rider is on the way</p>
+      </div>
+      <div class="tracker-step__dot"></div>
+    </div>
+
+    <div class="tracker-line" id="line-4"></div>
+
+    <div class="tracker-step" id="step-delivered">
+      <div class="tracker-step__icon">🎉</div>
+      <div class="tracker-step__content">
+        <p class="tracker-step__title">Delivered!</p>
+        <p class="tracker-step__desc">Enjoy your meal. For a Tasty Satisfaction!</p>
+      </div>
+      <div class="tracker-step__dot"></div>
+    </div>
+
+  </div>
+
+  <!-- Current Status Banner -->
+  <div class="status-banner" id="status-banner">
+    <span id="status-text">Order Received</span>
+  </div>
+
+  <!-- Order Summary -->
+  <div class="card confirm-card" style="margin-top: var(--space-4);">
+    <p class="confirm-card__label">Delivering To</p>
+    <p class="confirm-card__value" id="tracking-name"></p>
+    <p class="confirm-card__value" id="tracking-address"></p>
+    <p class="confirm-card__value" id="tracking-phone"></p>
+  </div>
+
+  <!-- Back to Home -->
+  <button class="btn btn-outline"
+          style="margin-top: var(--space-6);"
+          onclick="window.location.href='index.html'">
+    Back to Home
+  </button>
+
+</main>
 
   <nav class="bottom-nav">
     <a href="index.html" class="nav-item" data-page="home">
