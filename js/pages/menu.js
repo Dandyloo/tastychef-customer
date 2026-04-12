@@ -148,10 +148,12 @@ function createMenuCardHTML(item) {
   `;
 }
 
+// Quick Add to Cart 
 function quickAddToCart(event, itemId) {
   event.stopPropagation();
-  showToast('Added to cart! 🛒', 'success');
-  updateCartBadge();
+
+  const item = allMenuItems.find(i => i.id === itemId);
+  if (item) addToCart(item, 1);
 }
 
 // Run on load

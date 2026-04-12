@@ -87,12 +87,14 @@ function createFoodCardHTML(item) {
 }
 
 function quickAddToCart(event, itemId) {
-  // Stop click from also triggering the card navigation
   event.stopPropagation();
 
-  // Cart logic coming on Day 9 — placeholder for now
-  showToast('Added to cart! 🛒', 'success');
-  updateCartBadge();
+  fetch('assets/mock/menu.json')
+    .then(r => r.json())
+    .then(data => {
+      const item = data.items.find(i => i.id === itemId);
+      if (item) addToCart(item, 1);
+    });
 }
 
 // Run when page loads
