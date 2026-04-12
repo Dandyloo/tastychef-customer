@@ -4,33 +4,62 @@
 
 /* --- Hero Banner --- */
 .hero-banner {
-  background: var(--color-primary);
+  background: linear-gradient(135deg, #FF1E8C 0%, #D4006E 100%);
   border-radius: var(--radius-xl);
   padding: var(--space-6);
   margin-bottom: var(--space-6);
   position: relative;
   overflow: hidden;
-  min-height: 140px;
+  min-height: 160px;
   display: flex;
   align-items: center;
+}
+
+/* Decorative circles */
+.hero-banner {
+  background: linear-gradient(135deg, #FF1E8C 0%, #D4006E 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+  position: relative;
+  overflow: hidden;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .hero-banner::after {
   content: '🍽️';
   position: absolute;
-  right: 16px;
-  bottom: -8px;
-  font-size: 90px;
-  opacity: 0.15;
+  right: 20px;
+  bottom: -10px;
+  font-size: 80px;
+  opacity: 0.18;
+}
+
+.hero-banner__text {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-banner__sub {
   font-size: var(--text-xs);
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.85);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   font-weight: 600;
-  margin-bottom: var(--space-1);
+  margin-bottom: var(--space-2);
 }
 
 .hero-banner__title {
@@ -44,7 +73,7 @@
 
 .hero-banner__tag {
   font-size: var(--text-xs);
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.75);
   font-style: italic;
 }
 

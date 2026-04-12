@@ -15,9 +15,13 @@ function formatPrice(amount) {
 function updateCartBadge() {
   const badge = document.getElementById('cart-badge');
   if (!badge) return;
-  const cart = JSON.parse(localStorage.getItem('tastychef_cart') || '[]');
+
+  const cart  = JSON.parse(localStorage.getItem('tastychef_cart') || '[]');
   const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const price = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
   badge.textContent = total;
+
   if (total > 0) {
     badge.classList.remove('hidden');
     badge.classList.remove('bounce');
@@ -25,6 +29,16 @@ function updateCartBadge() {
     badge.classList.add('bounce');
   } else {
     badge.classList.add('hidden');
+  }
+
+  // Update floating cart button
+  const floatingCart = document.getElementById('floating-cart');
+  const floatingText = document.getElementById('floating-cart-text');
+  if (floatingCart) {
+    floatingCart.classList.toggle('hidden', total === 0);
+    if (floatingText) {
+      floatingText.textContent = `View Cart (${total}) — ${formatPrice(price)}`;
+    }
   }
 }
 
