@@ -16,12 +16,73 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/components/bottom-nav.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/food-card.css">
+  <link rel="stylesheet" href="css/pages/item.css">
 </head>
 <body data-page="item">
 
-  <main class="page-content" id="main-content">
-    <h1 style="padding:20px;">Item Details 🍽️</h1>
-  </main>
+<!-- Back Button Header -->
+<header class="item-header" id="item-header">
+  <button class="item-header__back" onclick="history.back()">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M12 5l-7 7 7 7"/>
+    </svg>
+  </button>
+  <span class="item-header__title" id="item-header-title"></span>
+</header>
+
+<main class="item-page" id="main-content">
+
+  <!-- Hero Image -->
+  <div class="item-hero" id="item-hero">
+    <img id="item-image" src="" alt="" loading="eager">
+    <span class="item-hero__badge hidden" id="item-badge">Popular</span>
+  </div>
+
+  <!-- Item Details -->
+  <div class="item-details">
+
+    <div class="item-details__top">
+      <div>
+        <h1 class="item-details__name" id="item-name">Loading...</h1>
+        <p class="item-details__category" id="item-category"></p>
+      </div>
+      <p class="item-details__price" id="item-price"></p>
+    </div>
+
+    <p class="item-details__description" id="item-description"></p>
+
+    <div class="divider"></div>
+
+    <!-- Quantity Selector -->
+    <div class="qty-row">
+      <span class="qty-row__label">Quantity</span>
+      <div class="qty-selector">
+        <button class="qty-btn" id="qty-minus" onclick="decreaseQty()">−</button>
+        <span class="qty-value" id="qty-display">1</span>
+        <button class="qty-btn" id="qty-plus" onclick="increaseQty()">+</button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Total -->
+    <div class="item-total">
+      <span class="item-total__label">Total</span>
+      <span class="item-total__value" id="item-total">GH₵ 0.00</span>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- Sticky Add to Cart Button -->
+<div class="add-to-cart-bar">
+  <button class="btn btn-primary" id="add-to-cart-btn" onclick="handleAddToCart()">
+    Add to Cart 🛒
+  </button>
+</div>
 
   <nav class="bottom-nav">
     <a href="index.html" class="nav-item" data-page="home">
