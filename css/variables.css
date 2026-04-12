@@ -5,7 +5,7 @@
 :root {
 
   /* --- Brand Colors --- */
-  --color-primary:       #E8572A;  /* Main orange — buttons, active states */
+  --color-primary:       #FF1E8C;  /* Main orange — buttons, active states */
   --color-primary-dark:  #C2431A;  /* Pressed/hover */
   --color-primary-light: #FFF0EB;  /* Soft orange bg — tags, badges */
 
@@ -30,7 +30,7 @@
 
   /* --- Bottom Navigation --- */
   --color-nav-bg:        #FFFFFF;
-  --color-nav-active:    #E8572A;
+  --color-nav-active:    #FF1E8C;
   --color-nav-inactive:  #AAAAAA;
 
   /* --- Typography --- */
