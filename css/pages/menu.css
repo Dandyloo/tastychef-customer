@@ -1,0 +1,117 @@
+/* ============================================
+   MENU PAGE
+   ============================================ */
+
+/* --- Search Bar --- */
+.search-bar {
+  margin-bottom: var(--space-4);
+}
+
+.search-bar__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 0 var(--space-4);
+  height: 48px;
+  transition: border-color 0.15s ease;
+}
+
+.search-bar__inner:focus-within {
+  border-color: var(--color-primary);
+}
+
+.search-bar__icon {
+  color: var(--color-text-light);
+  flex-shrink: 0;
+}
+
+.search-bar__input {
+  flex: 1;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background: none;
+  border: none;
+  outline: none;
+  min-width: 0;
+}
+
+.search-bar__input::placeholder {
+  color: var(--color-text-light);
+}
+
+.search-bar__clear {
+  color: var(--color-text-light);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: var(--radius-full);
+  transition: color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.search-bar__clear:hover {
+  color: var(--color-danger);
+}
+
+/* --- Category Strip --- */
+/* Already defined in home.css but repeated
+   here so menu page works independently */
+.category-strip {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+  margin-bottom: var(--space-4);
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.category-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.category-pill {
+  flex-shrink: 0;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.category-pill.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* --- Results Count --- */
+.results-count {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+  font-weight: 500;
+  min-height: 20px;
+}
+
+/* --- Food Grid --- */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
