@@ -5,12 +5,12 @@
 :root {
 
   /* --- Brand Colors --- */
-  --color-primary:       #E8572A;  /* Main orange — buttons, active states */
-  --color-primary-dark:  #C2431A;  /* Pressed/hover */
-  --color-primary-light: #FFF0EB;  /* Soft orange bg — tags, badges */
+  --color-primary:       #FF1E8C;    
+  --color-primary-dark:  #D4006E;  
+  --color-primary-light: #FFE8F4;  
 
   /* --- Backgrounds --- */
-  --color-bg:            #F7F5F2;  /* App background — warm off-white */
+  --color-bg:            #FAFAFA;  /* App background — warm off-white */
   --color-surface:       #FFFFFF;  /* Cards, modals, inputs */
   --color-surface-2:     #F0EDE8;  /* Subtle section dividers */
 
@@ -30,7 +30,7 @@
 
   /* --- Bottom Navigation --- */
   --color-nav-bg:        #FFFFFF;
-  --color-nav-active:    #E8572A;
+  --color-nav-active:    #FF1E8C;
   --color-nav-inactive:  #AAAAAA;
 
   /* --- Typography --- */

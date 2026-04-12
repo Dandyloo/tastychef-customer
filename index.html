@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#E8572A">
+  <meta name="theme-color" content="#FF1E8C">
   <title>Tasty Chef</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,13 +12,60 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/components/bottom-nav.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/food-card.css">
   <link rel="stylesheet" href="css/pages/home.css">
 </head>
 <body data-page="home">
 
-  <main class="page-content" id="main-content">
-    <h1 style="padding:20px;">Tasty Chef 🍛</h1>
-  </main>
+  <header class="app-header">
+  <div class="app-header__brand">
+    <span class="app-header__name">Tasty Chef</span>
+    <span class="app-header__tagline">Fresh · Fast · Tasty</span>
+  </div>
+  <div class="app-header__actions">
+    <button class="app-header__btn" onclick="window.location.href='menu.html'">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main class="page-content" id="main-content">
+
+  <!-- Hero Banner -->
+  <div class="hero-banner">
+    <div class="hero-banner__text">
+      <p class="hero-banner__sub">No. 1 Fast Food in Cape Coast</p>
+      <h1 class="hero-banner__title">Fresh. Fast.<br>Tasty. 🍽️</h1>
+      <p class="hero-banner__tag">For a Tasty Satisfaction</p>
+    </div>
+  </div>
+
+  <!-- Category Pills -->
+  <div class="category-strip" id="category-strip">
+    <!-- Filled by JS -->
+  </div>
+
+  <!-- Featured Section -->
+  <div class="section-header">
+    <span class="section-title">⭐ Popular</span>
+    <a href="menu.html" class="section-link">See all</a>
+  </div>
+  <div class="food-grid" id="popular-grid">
+    <!-- Filled by JS -->
+  </div>
+
+  <!-- All Items Section -->
+  <div class="section-header" style="margin-top: var(--space-6);">
+    <span class="section-title">Our Menu</span>
+  </div>
+  <div class="food-grid" id="all-grid">
+    <!-- Filled by JS -->
+  </div>
+
+</main>
 
   <nav class="bottom-nav">
     <a href="index.html" class="nav-item" data-page="home">

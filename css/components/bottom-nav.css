@@ -34,7 +34,7 @@
 }
 
 .nav-item.active {
-  color: #E8572A;
+  color: #FF1E8C;
 }
 
 .nav-icon {
@@ -50,7 +50,7 @@
   content: '';
   position: absolute;
   inset: -6px -10px;
-  background: #FFF0EB;
+  background: #FFE8F4;
   border-radius: 999px;
   z-index: -1;
 }
