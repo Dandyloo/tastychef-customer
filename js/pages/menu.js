@@ -1,4 +1,18 @@
 // menu.js — Menu page logic
+function debounce(fn, delay = 300) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), delay);
+  };
+}
+
+const debouncedSearch = debounce((value) => {
+  searchQuery = value.trim().toLowerCase();
+  const clearBtn = document.getElementById('search-clear');
+  if (clearBtn) clearBtn.classList.toggle('hidden', searchQuery === '');
+  applyFilters();
+});
 
 let allMenuItems = [];
 let activeCategory = 'All';
