@@ -31,9 +31,11 @@ async function loadHomeData() {
     renderPopularItems(data.items.filter(i => i.popular && i.available));
     renderAllItems(data.items.filter(i => i.available));
 
-  } catch (err) {
-    console.error('Failed to load menu data:', err);
-  }
+} catch (err) {
+  console.error('Failed to load menu data:', err);
+  showErrorState('popular-grid', 'Failed to load menu. Check your connection.');
+  showErrorState('all-grid', '');
+}
 }
 
 // ── Category Pills ─────────────────────────
