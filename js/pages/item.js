@@ -4,6 +4,9 @@ let currentItem = null;
 let quantity = 1;
 
 async function loadItemData() {
+     // Show skeleton
+    const hero = document.getElementById('item-hero');
+    if (hero) hero.innerHTML = '<div class="skeleton" style="width:100%;height:280px;"></div>';
   try {
     // Get item ID from URL e.g. item.html?id=2
     const params = new URLSearchParams(window.location.search);

@@ -1,6 +1,24 @@
 // cart-page.js — Cart page UI logic
 
+function showCartSkeleton() {
+  const container = document.getElementById('cart-items-container');
+  if (!container) return;
+  container.innerHTML = Array(3).fill(`
+    <div class="cart-item">
+      <div class="skeleton" style="width:72px; height:72px; border-radius:12px; flex-shrink:0;"></div>
+      <div class="cart-item__details">
+        <div class="skeleton" style="height:14px; width:80%; margin-bottom:8px; border-radius:4px;"></div>
+        <div class="skeleton" style="height:12px; width:50%; margin-bottom:12px; border-radius:4px;"></div>
+        <div class="skeleton" style="height:28px; width:100px; border-radius:999px;"></div>
+      </div>
+      <div class="skeleton" style="width:60px; height:20px; border-radius:4px;"></div>
+    </div>
+  `).join('');
+}
+
 function renderCartPage() {
+    showCartSkeleton(); 
+    setTimeout(() => {
   const cart      = getCart();
   const container = document.getElementById('cart-items-container');
   const summary   = document.getElementById('order-summary');
@@ -53,6 +71,7 @@ function renderCartPage() {
   // Show checkout button and clear button
   if (checkoutBar) checkoutBar.classList.remove('hidden');
   if (clearBtn)    clearBtn.classList.remove('hidden');
+}, 300);
 }
 
 function createCartItemHTML(item) {
