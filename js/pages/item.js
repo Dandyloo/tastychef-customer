@@ -26,10 +26,11 @@ async function loadItemData() {
 
     renderItemDetails(currentItem);
 
-  } catch (err) {
-    console.error('Failed to load item:', err);
-    window.location.href = 'menu.html';
-  }
+} catch (err) {
+  console.error('Failed to load item:', err);
+  showToast('Failed to load item. Going back...', 'danger');
+  setTimeout(() => window.location.href = 'menu.html', 1500);
+}
 }
 
 function renderItemDetails(item) {

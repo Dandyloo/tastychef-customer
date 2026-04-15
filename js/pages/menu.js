@@ -16,9 +16,10 @@ async function loadMenuData() {
     renderCategoryPills(data.categories);
     renderMenuItems(allMenuItems.filter(i => i.available));
 
-  } catch (err) {
-    console.error('Failed to load menu:', err);
-  }
+} catch (err) {
+  console.error('Failed to load menu:', err);
+  showErrorState('menu-grid', 'Failed to load menu. Check your connection.');
+}
 }
 
 // ── Skeletons ──────────────────────────────

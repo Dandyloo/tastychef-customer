@@ -69,3 +69,23 @@ function getFoodImage(imagePath, itemName) {
   };
   return placeholders[imagePath] || `https://placehold.co/400x300/FF1E8C/FFFFFF?text=${encodeURIComponent(itemName)}`;
 }
+
+function showErrorState(containerId, message = 'Something went wrong. Please try again.') {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  el.innerHTML = `
+    <div class="empty-state" style="grid-column:1/-1;">
+      <div class="empty-state__icon">😕</div>
+      <p class="empty-state__title">Oops!</p>
+      <p class="empty-state__text">${message}</p>
+      <button class="btn btn-outline" style="margin-top:16px; width:auto;"
+              onclick="location.reload()">Try Again</button>
+    </div>
+  `;
+}
+
+function showNetworkError() {
+  showToast('No internet connection 📶', 'danger');
+}
+
+window.addEventListener('offline', showNetworkError);
